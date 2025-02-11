@@ -1,0 +1,41 @@
+{
+    "scripts": [
+        {
+            "name": "examples/hello-world",
+            "description": "Prints a hello world message to the screen",
+            "cmd": "uv run",
+            "args": [
+                "hello-world/main.py",
+                "--"
+            ],
+            "aliases": [
+                "hello"
+            ]
+        }
+    ],
+    "templates": [
+        {
+            "name": "python-uv",
+            "description": "A python script runnable with uv",
+            "path": "templates/python-uv",
+            "template": {
+                "cmd": "uv run",
+                "args": [
+                    "{{ script.dir }}/main.py",
+                    "--"
+                ]
+            }
+        },
+        {
+            "name": "sh",
+            "description": "A shell script runnable with sh",
+            "path": "templates/sh",
+            "template": {
+                "cmd": "sh",
+                "args": [
+                    "{{ script.dir }}/main.sh"
+                ]
+            }
+        }
+    ]
+}
