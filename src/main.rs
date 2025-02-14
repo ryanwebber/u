@@ -20,9 +20,7 @@ fn try_main() -> anyhow::Result<()> {
     };
 
     init::init_if_required(&settings)?;
-
-    let args = std::env::args().skip(1).collect::<Vec<_>>();
-    runner::run(&settings, args)?;
+    runner::run(&settings, std::env::args().skip(1))?;
 
     Ok(())
 }
