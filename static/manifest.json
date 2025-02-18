@@ -1,16 +1,36 @@
 {
     "scripts": [
         {
-            "name": "examples/hello-world",
-            "description": "Prints a hello world message to the screen",
-            "cmd": "uv run",
+            "name": "scripts/create",
+            "description": "Create a new script",
+            "cmd": "python3.11",
             "args": [
-                "hello-world/main.py",
-                "--"
+                "scripts/create/main.py"
             ],
             "aliases": [
-                "hello"
+                "create"
             ]
+        },
+        {
+            "name": "scripts/help",
+            "description": "Print a list of available scripts",
+            "cmd": "python3.11",
+            "args": [
+                "scripts/help/main.py"
+            ],
+            "aliases": [
+                "help",
+                "list"
+            ]
+        },
+        {
+            "name": "scripts/delete",
+            "description": "Delete an existing script",
+            "cmd": "python3.11",
+            "args": [
+                "scripts/delete/main.py"
+            ],
+            "aliases": []
         }
     ],
     "templates": [

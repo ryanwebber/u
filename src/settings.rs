@@ -25,7 +25,7 @@ impl Settings {
                 if let Ok(path) = std::env::var("U_EXECUTABLE") {
                     path
                 } else {
-                    String::from("python3")
+                    String::from("python3.11")
                 }
             },
         })

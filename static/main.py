@@ -5,11 +5,35 @@
 # The CWD will be set to the directory containing this script  by the parent process.
 #
 
-import utils.lib
+from typing import List
+from utils import lib, colors
+
+def exec(manifest: lib.Manifest, script_name: str, args: List[str]):
+    script = manifest.get_script(script_name)
+    if script is None:
+        if script_name == "help":
+            exit(2)
+        else:
+            print(f"{colors.BOLD}{colors.FAIL}Error:{colors.ENDC} Script '{script_name}' not found...")
+            print()
+            exec(manifest, "help", [])
+            exit(3)
+    else:
+        script.execute(args)
 
 def main():
-    manifest = utils.lib.Manifest.load()
-    print(manifest)
+    args = lib.get_args()
+
+    try:
+        manifest = lib.Manifest.load()
+    except:
+        print(f"Unable to load manifest at {lib.manifest_path()}")
+        exit(1)
+
+    if len(args) == 0:
+        exec(manifest, "help", [])
+    else:
+        exec(manifest, args[0], args[1:])
 
 if __name__ == "__main__":
     main()
