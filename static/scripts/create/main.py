@@ -1,4 +1,3 @@
-from argparse import ArgumentParser, ArgumentError, ArgumentTypeError
 from typing import List
 from utils import lib, colors, args
 from os import path
@@ -121,7 +120,7 @@ def main():
         print(f"{colors.FAIL}[Error]{colors.ENDC} Failed to copy template to '{script_abs_dir}'")
         exit(1)
 
-    print("Script:", script)
+    print(f"Created script '{colors.GREEN}{args.name}{colors.ENDC}' at {colors.GRAY}{script_abs_dir}{colors.ENDC}")
 
 if __name__ == "__main__":
     main()

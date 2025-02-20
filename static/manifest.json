@@ -13,6 +13,18 @@
             ]
         },
         {
+            "name": "scripts/delete",
+            "path": "scripts/delete",
+            "description": "Permanently delete a script",
+            "cmd": "python3.11",
+            "args": [
+                "scripts/delete/main.py"
+            ],
+            "aliases": [
+                "delete"
+            ]
+        },
+        {
             "name": "scripts/help",
             "path": "scripts/help",
             "description": "Print a list of available scripts",

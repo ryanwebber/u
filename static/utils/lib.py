@@ -20,6 +20,10 @@ def copy_dir(src: str, dest: str) -> int:
     else:
         return subprocess.run(["cp", "-r", "-a", src, dest]).returncode
 
+def delete_dir(path: str) -> int:
+    # Delete the directory and return the exit code
+    return subprocess.run(["rm", "-rf", path]).returncode
+
 class Script:
     def __init__(self, name: str, path: str, cmd: str, args: List[str], description: Optional[str] = None, aliases: Optional[List[str]] = None):
         self.name = name
@@ -140,6 +144,9 @@ class Manifest:
     
     def add_script(self, script: Script):
         self.scripts.append(script)
+
+    def remove_script(self, name: str):
+        self.scripts = [script for script in self.scripts if script.name != name]
     
     def get_template(self, name: str) -> Optional[Template]:
         for template in self.templates:

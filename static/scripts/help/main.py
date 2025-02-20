@@ -1,6 +1,6 @@
-from utils import lib, colors, args
+from utils import lib, args
 
-class CreateScriptArgumentParser(args.PrettyArgumentParser):
+class HelpScriptArgumentParser(args.PrettyArgumentParser):
     def __init__(self, manifest: lib.Manifest):
         super().__init__(manifest = manifest)
 
@@ -23,7 +23,7 @@ class CreateScriptArgumentParser(args.PrettyArgumentParser):
 
 def main():
     manifest = lib.Manifest.load()
-    parser = CreateScriptArgumentParser(manifest)
+    parser = HelpScriptArgumentParser(manifest)
     parser.print_help()
 
 if __name__ == "__main__":
