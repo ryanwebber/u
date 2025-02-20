@@ -9,6 +9,7 @@ edition = "2021"
 anyhow = "1.0.95"
 flate2 = "1.0.35"
 homedir = "0.3.4"
+inquire = "0.7.5"
 tar = "0.4.43"
 
 [build-dependencies]

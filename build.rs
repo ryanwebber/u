@@ -3,8 +3,10 @@ use std::io::Write;
 fn main() {
     // Archive and gzip the static directory and write it to a file to be included in the binary
     let mut archive = tar::Builder::new(Vec::new());
+    archive.follow_symlinks(false);
+
     archive
-        .append_dir_all("static", "static")
+        .append_dir_all(".", "static")
         .expect("Failed to archive static directory");
 
     let mut gz = flate2::write::GzEncoder::new(Vec::new(), flate2::Compression::default());
