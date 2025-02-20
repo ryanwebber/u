@@ -2,11 +2,11 @@
     "scripts": [
         {
             "name": "scripts/create",
-            "path": "scripts/create",
+            "path": "scripts/scripts.create",
             "description": "Create a new script",
             "cmd": "python3.11",
             "args": [
-                "scripts/create/main.py"
+                "scripts/scripts.create/main.py"
             ],
             "aliases": [
                 "create"
@@ -14,23 +14,35 @@
         },
         {
             "name": "scripts/delete",
-            "path": "scripts/delete",
+            "path": "scripts/scripts.delete",
             "description": "Permanently delete a script",
             "cmd": "python3.11",
             "args": [
-                "scripts/delete/main.py"
+                "scripts/scripts.delete/main.py"
             ],
             "aliases": [
                 "delete"
             ]
         },
         {
+            "name": "scripts/edit",
+            "path": "scripts/scripts.edit",
+            "description": "Edit an existing script with the default editor",
+            "cmd": "python3.11",
+            "args": [
+                "scripts/scripts.edit/main.py"
+            ],
+            "aliases": [
+                "edit"
+            ]
+        },
+        {
             "name": "scripts/help",
-            "path": "scripts/help",
+            "path": "scripts/scripts.help",
             "description": "Print a list of available scripts",
             "cmd": "python3.11",
             "args": [
-                "scripts/help/main.py"
+                "scripts/scripts.help/main.py"
             ],
             "aliases": [
                 "help",
