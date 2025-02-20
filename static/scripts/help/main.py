@@ -1,30 +1,30 @@
-from utils import lib, colors
+from utils import lib, colors, args
+
+class CreateScriptArgumentParser(args.PrettyArgumentParser):
+    def __init__(self, manifest: lib.Manifest):
+        super().__init__(manifest = manifest)
+
+    def options(self):
+        return []
+
+    def format_usage(self):
+        return "u <script> [args...]"
+    
+    def print_help(self):
+        print(f"User script manager and executor")
+        print()
+        self.print_usage()
+        print()
+        self.print_options()
+        print()
+        self.print_scripts()
+        print()
+        self.print_templates()
 
 def main():
     manifest = lib.Manifest.load()
-    scripts = sorted(manifest.scripts, key=lambda x: x.name)
-
-    print(f"User script manager and executor")
-    print()
-    print(f"{colors.GREEN}{colors.BOLD}Usage:{colors.ENDC} {colors.CYAN}u <script> [args...]{colors.ENDC}")
-    print()
-    print(f"{colors.GREEN}{colors.BOLD}Available scripts:{colors.ENDC}")
-
-    descriptive_names = [script.name for script in scripts]
-    len_of_longest_script_name = max([len(name) for name in descriptive_names])
-
-    aliases = [', '.join(script.aliases) for script in scripts]
-    len_of_longest_alias = max([len(alias) for alias in aliases])
-
-    for (name, aliases, script) in zip(descriptive_names, aliases, scripts):
-        alias_list = f"({aliases})" if aliases else ""
-        print(
-            f"  {colors.CYAN}{name}{colors.ENDC}",
-            " " * (len_of_longest_script_name - len(name)),
-            f"{colors.GRAY}{f'({aliases})' if aliases else '  '}{colors.ENDC}",
-            " " * (len_of_longest_alias - len(aliases)),
-            f"{script.description}"
-        )
+    parser = CreateScriptArgumentParser(manifest)
+    parser.print_help()
 
 if __name__ == "__main__":
     main()

@@ -2,6 +2,7 @@
     "scripts": [
         {
             "name": "scripts/create",
+            "path": "scripts/create",
             "description": "Create a new script",
             "cmd": "python3.11",
             "args": [
@@ -13,6 +14,7 @@
         },
         {
             "name": "scripts/help",
+            "path": "scripts/help",
             "description": "Print a list of available scripts",
             "cmd": "python3.11",
             "args": [
@@ -22,15 +24,6 @@
                 "help",
                 "list"
             ]
-        },
-        {
-            "name": "scripts/delete",
-            "description": "Delete an existing script",
-            "cmd": "python3.11",
-            "args": [
-                "scripts/delete/main.py"
-            ],
-            "aliases": []
         }
     ],
     "templates": [
