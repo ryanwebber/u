@@ -40,14 +40,69 @@
     ],
     "templates": [
         {
-            "name": "python-uv",
-            "description": "A python script runnable with uv",
-            "path": "templates/python-uv",
+            "name": "bash",
+            "description": "A shell script runnable with bash",
+            "path": "templates/bash",
+            "template": {
+                "cmd": "bash",
+                "args": [
+                    "{{ script.dir }}/main.sh"
+                ]
+            }
+        },
+        {
+            "name": "perl",
+            "description": "A perl script",
+            "path": "templates/perl",
+            "template": {
+                "cmd": "perl",
+                "args": [
+                    "{{ script.dir }}/main.pl"
+                ]
+            }
+        },
+        {
+            "name": "python2",
+            "description": "A python2 script",
+            "path": "templates/python2",
+            "template": {
+                "cmd": "python2",
+                "args": [
+                    "{{ script.dir }}/main.py"
+                ]
+            }
+        },
+        {
+            "name": "python3",
+            "description": "A python3 script",
+            "path": "templates/python3",
+            "template": {
+                "cmd": "python3",
+                "args": [
+                    "{{ script.dir }}/main.py"
+                ]
+            }
+        },
+        {
+            "name": "python3-uv",
+            "description": "A python3 script runnable with uv",
+            "path": "templates/python3-uv",
             "template": {
                 "cmd": "uv run",
                 "args": [
                     "{{ script.dir }}/main.py",
                     "--"
+                ]
+            }
+        },
+        {
+            "name": "ruby",
+            "description": "A ruby script",
+            "path": "templates/ruby",
+            "template": {
+                "cmd": "ruby",
+                "args": [
+                    "{{ script.dir }}/main.rb"
                 ]
             }
         },
