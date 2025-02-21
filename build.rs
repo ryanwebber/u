@@ -28,6 +28,7 @@ fn main() {
     );
 
     println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=static");
 
     // Also, track the files in the tarball for changes
     for entry in glob::glob("static/**/*").expect("Failed to read glob pattern") {

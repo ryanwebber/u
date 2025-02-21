@@ -21,7 +21,6 @@ pub fn init_if_required(settings: &Settings) -> anyhow::Result<()> {
                 std::process::exit(0);
             }
 
-            // Unpack the static tarball into the config directory using tar and flate2
             let reader = flate2::read::GzDecoder::new(STATIC_TARBALL);
             let mut archive = tar::Archive::new(reader);
             archive.unpack(&settings.config_path)?;
