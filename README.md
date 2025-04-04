@@ -6,8 +6,8 @@ A simple script manager and runner.
 
 - Create, manage, and run scripts
 - Customizable templates
-- Compatible with source control
-- Hackable and customizable
+- Entirely source control compatible
+- Hackable and extendable 
 
 ## Dependencies
 
@@ -28,4 +28,4 @@ The compiled binary embeds a tarball containing some basic scripts to create and
 
 This allows for the entire script configuration directory to be source controlled, including the script runner, templates, and the user scripts themselves.
 
-A manifest file is used to track all scripts and templates, and can be easily modified by hand to.
+A manifest file is used to track all scripts and templates and can easily be modified by hand.
