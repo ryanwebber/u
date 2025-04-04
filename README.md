@@ -1,6 +1,6 @@
 # u
 
-[![Rust](https://github.com/ryanwebber/u/actions/workflows/rust.yml/badge.svg)](https://github.com/ryanwebber/u/actions/workflows/rust.yml)
+[![Build](https://github.com/ryanwebber/u/actions/workflows/rust.yml/badge.svg)](https://github.com/ryanwebber/u/actions/workflows/rust.yml)
 
 A simple script manager and runner.
 
